@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Crystal&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Je ne parle pas français">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crystal&#39;s Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Crystal&#39;s Blog">
+<meta property="og:description" content="Je ne parle pas français">
+<meta property="og:locale" content="zn_CH">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Crystal&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ing...</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-python學習筆記" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" class="article-date">
+  <time class="dt-published" datetime="2025-04-19T01:29:32.000Z" itemprop="datePublished">2025-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">python學習筆記</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><h3 id="二分搜尋法"><a href="#二分搜尋法" class="headerlink" title="二分搜尋法"></a>二分搜尋法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>):</span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> arr[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid  </span><br><span class="line">        <span class="keyword">elif</span> arr[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>  </span><br><span class="line"></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">15</span>]</span><br><span class="line">target_number = <span class="number">7</span></span><br><span class="line">result = binary_search(numbers, target_number)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result != -<span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;找到 <span class="subst">&#123;target_number&#125;</span> 在索引 <span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;target_number&#125;</span> 不在列表中&quot;</span>)</span><br><span class="line">```    </span><br><span class="line"><span class="comment">### 廣度優先搜尋 (BFS)</span></span><br><span class="line">```python</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">graph, start</span>):</span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    queue = deque([start])</span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">            <span class="built_in">print</span>(node)</span><br><span class="line">            visited.add(node)</span><br><span class="line">            queue.extend(neighbor <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node] <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited)</span><br><span class="line"></span><br><span class="line">graph = &#123;</span><br><span class="line">    <span class="string">&#x27;A&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;B&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;C&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;F&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;D&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;E&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;F&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;F&#x27;</span>: [<span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;E&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bfs(graph, <span class="string">&#x27;A&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="逐行分析"><a href="#逐行分析" class="headerlink" title="逐行分析"></a>逐行分析</h2><h3 id="二分搜尋法-1"><a href="#二分搜尋法-1" class="headerlink" title="二分搜尋法"></a>二分搜尋法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>): </span><br></pre></td></tr></table></figure>
+<p>定義一個名為 binary_search 的函式，接收一個已排序的列表 arr 和要尋找的值 target。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>設定搜尋範圍的起始與結束位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right: </span><br></pre></td></tr></table></figure>
+<p>只要搜尋範圍還沒交錯，就繼續執行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (left + right) // <span class="number">2</span> </span><br></pre></td></tr></table></figure>
+<p>計算中間位置的索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> arr[mid] == target: </span><br><span class="line">    <span class="keyword">return</span> mid</span><br></pre></td></tr></table></figure>
+<p>如果中間值剛好是目標，回傳該索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">elif</span> arr[mid] &lt; target: </span><br><span class="line">    left = mid + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>如果中間值比目標小，代表目標可能在右半邊，更新 left。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    right = mid - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>否則目標可能在左半邊，更新 right。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> -<span class="number">1</span> </span><br></pre></td></tr></table></figure>
+<p>如果跳出 while 迴圈還沒找到，代表目標不在列表中。</p>
+<h3 id="廣度優先搜尋-BFS"><a href="#廣度優先搜尋-BFS" class="headerlink" title="廣度優先搜尋 (BFS)"></a>廣度優先搜尋 (BFS)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br></pre></td></tr></table></figure>
+<p>匯入雙端佇列（適合 BFS 使用）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">graph, start</span>):</span><br></pre></td></tr></table></figure>
+<p>定義 BFS 函式，接收圖和起點</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visited = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+<p>建立一個集合紀錄已拜訪節點</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">queue = deque([start])</span><br></pre></td></tr></table></figure>
+<p>建立 BFS 佇列並放入起點</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> queue</span><br></pre></td></tr></table></figure>
+<p>只要佇列不空就持續執行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node = queue.popleft()</span><br></pre></td></tr></table></figure>
+<p>取出佇列最前端節點</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">    <span class="built_in">print</span>(node)</span><br><span class="line">    visited.add(node)</span><br></pre></td></tr></table></figure>
+<p>若尚未拜訪此節點，則印出目前節點並加入拜訪紀錄</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">queue.extend(neighbor <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node] <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited)</span><br></pre></td></tr></table></figure>
+<p>並將所有尚未拜訪的鄰居加入佇列中。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" data-id="cm9njxzsu000040zbbbvd9la0" data-title="python學習筆記" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-0331" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/11/0331/" class="article-date">
+  <time class="dt-published" datetime="2025-04-11T10:34:58.000Z" itemprop="datePublished">2025-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/04/11/0331/">二分搜尋程式碼學習筆記</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>):</span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> arr[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid  </span><br><span class="line">        <span class="keyword">elif</span> arr[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>  </span><br><span class="line"></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">15</span>]</span><br><span class="line">target_number = <span class="number">7</span></span><br><span class="line">result = binary_search(numbers, target_number)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result != -<span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;找到 <span class="subst">&#123;target_number&#125;</span> 在索引 <span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;target_number&#125;</span> 不在列表中&quot;</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">逐行分析</span><br><span class="line">---</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>): </span><br></pre></td></tr></table></figure>
+<p>定義一個名為 binary_search 的函式，接收一個已排序的列表 arr 和要尋找的值 target。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>設定搜尋範圍的起始與結束位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right: </span><br></pre></td></tr></table></figure>
+<p>只要搜尋範圍還沒交錯，就繼續執行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (left + right) // <span class="number">2</span> </span><br></pre></td></tr></table></figure>
+<p>計算中間位置的索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> arr[mid] == target: </span><br><span class="line">    <span class="keyword">return</span> mid</span><br></pre></td></tr></table></figure>
+<p>如果中間值剛好是目標，回傳該索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">elif</span> arr[mid] &lt; target: </span><br><span class="line">    left = mid + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>如果中間值比目標小，代表目標可能在右半邊，更新 left。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    right = mid - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>否則目標可能在左半邊，更新 right。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> -<span class="number">1</span> </span><br></pre></td></tr></table></figure>
+<p>如果跳出 while 迴圈還沒找到，代表目標不在列表中。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/11/0331/" data-id="cm9dmasha00002azb33iz68ms" data-title="二分搜尋程式碼學習筆記" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-學習心得" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/" class="article-date">
+  <time class="dt-published" datetime="2025-03-29T03:26:02.000Z" itemprop="datePublished">2025-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/">學習心得</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="學習內容"><a href="#學習內容" class="headerlink" title="學習內容"></a>學習內容</h2><p> <img src="/2025/04/11/0331/image.png"> </p>
+<h2 id="學習心得"><a href="#學習心得" class="headerlink" title="學習心得"></a>學習心得</h2><p>在這段時間的學習中，我接觸了許多關於人工智慧（GenAI）、Markdown、Git 以及 Python 環境設定等技術。透過探索 GenAI API 和 LLM，我對人工智慧的應用有了更深入的理解，學會了如何與 AI 模型互動，並嘗試使用 API 來開發應用程式。另外，我學習了 Markdown，這讓我能夠更有效率地撰寫文件和筆記，提升了整理資訊的能力。</p>
+<p>在程式開發方面，我熟悉了 Git 和終端機的基本操作，這對於版本控制和開發流程至關重要。同時，透過 Python 環境的配置與實驗，我理解了軟體開發中的依賴管理與環境設定的重要性。最後，我也嘗試建立自己的部落格，這不僅加深了我對 Hexo 靜態網站的認識，也讓我能夠分享自己的學習成果。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/" data-id="cm9dnpcz90000e3zb00gf30vs" data-title="學習心得" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">python學習筆記</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/11/0331/">二分搜尋程式碼學習筆記</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/">學習心得</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Crystal&#39;s Blog<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
