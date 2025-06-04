@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
 <head>
   <meta charset="utf-8">
   
   
+  
+
+  
   <title>Crystal&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
   <meta name="description" content="Je ne parle pas français">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Crystal&#39;s Blog">
@@ -18,497 +32,598 @@
     <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
   
   
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Crystal&#39;s Blog</a>
+  
+  
+    
+<div id="banner" class=" is_home ">
+  <img src="/images/bannerimage.jpeg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=" is_home "  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Crystal's Blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/images/myavatar.jpeg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Crystal Chang </div>
+      <div class="dot"></div>
+      <div class="subtitle">my blog </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+
+    
+      
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+      
+   
+
+
+<article id="post-網站規劃與學習進度整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/05/31/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E8%88%87%E5%AD%B8%E7%BF%92%E9%80%B2%E5%BA%A6%E6%95%B4%E7%90%86/">網站規劃與學習進度整理</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">ing...</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
+    
   
-    <article id="post-網站規劃與學習進度整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/05/31/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E8%88%87%E5%AD%B8%E7%BF%92%E9%80%B2%E5%BA%A6%E6%95%B4%E7%90%86/" class="article-date">
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
   <time class="dt-published" datetime="2025-05-31T01:27:58.000Z" itemprop="datePublished">2025-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            552 词 
+          </div>
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/05/31/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E8%88%87%E5%AD%B8%E7%BF%92%E9%80%B2%E5%BA%A6%E6%95%B4%E7%90%86/">網站規劃與學習進度整理</a>
-    </h1>
-  
-
       </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="喜歡的-Hexo-主題"><a href="#喜歡的-Hexo-主題" class="headerlink" title="喜歡的 Hexo 主題"></a>喜歡的 Hexo 主題</h1><p>主題連結：<a target="_blank" rel="noopener" href="https://saicaca.github.io/vivia-preview/">vivia</a></p>
-<p>原因</p>
-<ul>
-<li>預設內容完整</li>
-<li>顏色豐富、圖形柔和</li>
-</ul>
-<p>預計規劃</p>
-<ul>
-<li>計畫更換背景圖片與頭像，讓網站更具個人風格，方便做為學習歷程展示用</li>
-<li>打算縮小或刪除評論區，因為不一定會有訪客留言</li>
-</ul>
-<hr>
-<h1 id="學習進度規劃"><a href="#學習進度規劃" class="headerlink" title="學習進度規劃"></a>學習進度規劃</h1><table>
-<thead>
-<tr>
-<th>科目</th>
-<th>學習內容</th>
-<th>第一週</th>
-<th>第二週</th>
-<th>第三週</th>
-<th>第四週</th>
-<th>第五週（考試）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>國文</td>
-<td>大講義、語文練習、考卷訂正、默背</td>
-<td>大講義25%</td>
-<td>大講義50%、語文練習30%</td>
-<td>大講義75%、語文練習60%</td>
-<td>大講義100%、語文練習100%、考卷訂正50%</td>
-<td>考卷訂正100%、默背</td>
-</tr>
-<tr>
-<td>英文</td>
-<td>句型書、歷屆考題、雜誌</td>
-<td>L7單字、L8單字</td>
-<td>L9單字</td>
-<td>句型書、歷屆考題</td>
-<td>補齊學期作業、整理單字</td>
-<td>複習考卷</td>
-</tr>
-<tr>
-<td>數學</td>
-<td>講義、薪哲講義、薪哲複習卷</td>
-<td>講義4-1、薪哲講義4-1</td>
-<td>講義4-2、薪哲講義4-2(50%)</td>
-<td>講義4-3、薪哲講義4-2(100%)</td>
-<td>薪哲講義4-3</td>
-<td>薪哲複習卷</td>
-</tr>
-<tr>
-<td>物理</td>
-<td>講義、習作</td>
-<td>習作4-4、4-5</td>
-<td>講義4-4、4-5、習作5-1</td>
-<td>講義5-1、習作5-2</td>
-<td>講義5-2、習作5-3</td>
-<td>講義5-3、考卷訂正</td>
-</tr>
-<tr>
-<td>化學</td>
-<td>講義、習作</td>
-<td>習作2-4、2-5</td>
-<td>講義2-4、2-5、習作2-6</td>
-<td>講義2-6、習作3-1</td>
-<td>講義3-1、3-2、習作3-2、3-3</td>
-<td>講義3-3</td>
-</tr>
-<tr>
-<td>生物</td>
-<td>講義</td>
-<td>講義3-2</td>
-<td>講義3-3</td>
-<td>講義4-1</td>
-<td>講義4-2</td>
-<td>講義4-3*範圍尚未確定</td>
-</tr>
-<tr>
-<td>歷史</td>
-<td>習作</td>
-<td>習作4-2</td>
-<td>習作4-3、5-1</td>
-<td>習作5-2、5-3</td>
-<td>習作6-2、6-3</td>
-<td>完成考卷&#x2F;訂正</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/31/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E8%88%87%E5%AD%B8%E7%BF%92%E9%80%B2%E5%BA%A6%E6%95%B4%E7%90%86/" data-id="cmbbk3as60000h0zbha78c8hh" data-title="網站規劃與學習進度整理" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="python-python 學習筆記 – deque 與 list 的比較" class="h-entry article article-type-python" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/05/03/python%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%20%E2%80%93%20deque%20%E8%88%87%20list%20%E7%9A%84%E6%AF%94%E8%BC%83/" class="article-date">
-  <time class="dt-published" datetime="2025-05-03T02:48:53.000Z" itemprop="datePublished">2025-05-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <div class="e-content article-entry" itemprop="articleBody">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/05/03/python%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%20%E2%80%93%20deque%20%E8%88%87%20list%20%E7%9A%84%E6%AF%94%E8%BC%83/">python 學習筆記 – deque 與 list 的比較</a>
-    </h1>
-  
+          <div class="truncate-text">
+            
+              喜歡的 Hexo 主題主題連結：vivia
+原因
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><h3 id="使用-deque-的-BFS-寫法"><a href="#使用-deque-的-BFS-寫法" class="headerlink" title="使用 deque 的 BFS 寫法"></a>使用 deque 的 BFS 寫法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs_with_deque</span>(<span class="params">graph, start</span>):</span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    queue = deque([start])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">            <span class="built_in">print</span>(node)</span><br><span class="line">            visited.add(node)</span><br><span class="line">            queue.extend(neighbor <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node] <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited)</span><br></pre></td></tr></table></figure>
-<h3 id="使用-List-的-BFS-寫法"><a href="#使用-List-的-BFS-寫法" class="headerlink" title="使用 List 的 BFS 寫法"></a>使用 List 的 BFS 寫法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">bfs_with_list</span>(<span class="params">graph, start</span>):</span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    queue = [start]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">            <span class="built_in">print</span>(node)</span><br><span class="line">            visited.add(node)</span><br><span class="line">            queue.extend(neighbor <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node] <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited)</span><br></pre></td></tr></table></figure>
-<h2 id="問題討論"><a href="#問題討論" class="headerlink" title="問題討論"></a>問題討論</h2><p>使用 deque 與 list 執行BFS的差異：<br>雖然兩種方式在結果上沒有差異，都能正確完成 BFS，但它們在效率上會產生差異。</p>
-<p>首先，BFS 的操作需要不斷從佇列頭部取出節點，再把新節點加到尾端。<br>因為 deque 是一種可以在頭尾皆可加減元素的雙向佇列。若使用 deque 的 popleft() 和 append()，兩者的時間複雜度都是 O(1)，</p>
-<p>相對來說，因為 list 的頭是固定的，不能任意改位置，所以每次從頭拿掉一個元素時，後面所有元素都要往前移一格。這樣執行 pop() 的時間複雜度為 O(n)。</p>
-<p>比較兩者的時間複雜度能看出，deque 的 O(1) 會快於 list 的 O(n)。<br>所以總結來說，雖然兩個程式都能跑出一樣的答案，但從時間效率來看，deque 比 list 更適合用來寫 BFS，特別是在資料量大的時候差距會很明顯。</p>
+預設內容完整
+顏色豐富、圖形柔和
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/03/python%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%20%E2%80%93%20deque%20%E8%88%87%20list%20%E7%9A%84%E6%AF%94%E8%BC%83/" data-id="cma7nog340000c6zb4275d9qc" data-title="python 學習筆記 – deque 與 list 的比較" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+預計規劃
+
+計畫更換背景圖片與頭像，讓網站更具個人風格，方便做為學習歷程展示用
+打算縮小或刪除評論區，因為不一定會有訪客留言
+
+
+學習進度規劃
+
+
+科目
+學習內容
+第一週
+第二週
+第三週
+第四週
+第五週（考試）
 
 
 
-  
-    <article id="post-python學習筆記" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" class="article-date">
-  <time class="dt-published" datetime="2025-04-19T01:29:32.000Z" itemprop="datePublished">2025-04-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">python學習筆記</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><h3 id="二分搜尋法"><a href="#二分搜尋法" class="headerlink" title="二分搜尋法"></a>二分搜尋法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>):</span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> arr[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid  </span><br><span class="line">        <span class="keyword">elif</span> arr[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>  </span><br><span class="line"></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">15</span>]</span><br><span class="line">target_number = <span class="number">7</span></span><br><span class="line">result = binary_search(numbers, target_number)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result != -<span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;找到 <span class="subst">&#123;target_number&#125;</span> 在索引 <span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;target_number&#125;</span> 不在列表中&quot;</span>)</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 廣度優先搜尋 (BFS)</span></span><br><span class="line">```python</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs_with_list</span>(<span class="params">graph, start</span>):</span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    queue = [start]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.pop(<span class="number">0</span>) </span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">            <span class="built_in">print</span>(node)</span><br><span class="line">            visited.add(node)</span><br><span class="line">            queue.extend(neighbor <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node] <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 測試圖</span></span><br><span class="line">graph = &#123;</span><br><span class="line">    <span class="string">&#x27;A&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;B&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;C&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;F&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;D&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;E&#x27;</span>: [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;F&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;F&#x27;</span>: [<span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;E&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bfs_with_list(graph, <span class="string">&#x27;A&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="逐行分析"><a href="#逐行分析" class="headerlink" title="逐行分析"></a>逐行分析</h2><h3 id="二分搜尋法-1"><a href="#二分搜尋法-1" class="headerlink" title="二分搜尋法"></a>二分搜尋法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>): </span><br></pre></td></tr></table></figure>
-<p>定義一個名為 binary_search 的函式，接收一個已排序的列表 arr 和要尋找的值 target。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>設定搜尋範圍的起始與結束位置。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right: </span><br></pre></td></tr></table></figure>
-<p>只要搜尋範圍還沒交錯，就繼續執行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (left + right) // <span class="number">2</span> </span><br></pre></td></tr></table></figure>
-<p>計算中間位置的索引。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> arr[mid] == target: </span><br><span class="line">    <span class="keyword">return</span> mid</span><br></pre></td></tr></table></figure>
-<p>如果中間值剛好是目標，回傳該索引。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">elif</span> arr[mid] &lt; target: </span><br><span class="line">    left = mid + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>如果中間值比目標小，代表目標可能在右半邊，更新 left。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    right = mid - <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>否則目標可能在左半邊，更新 right。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> -<span class="number">1</span> </span><br></pre></td></tr></table></figure>
-<p>如果跳出 while 迴圈還沒找到，代表目標不在列表中。</p>
-<h3 id="廣度優先搜尋-BF0"><a href="#廣度優先搜尋-BF0" class="headerlink" title="廣度優先搜尋 (BF0)"></a>廣度優先搜尋 (BF0)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">graph, start</span>):</span><br></pre></td></tr></table></figure>
-<p>定義 BFS 函式，接收圖和起點</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visited = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
-<p>建立一個集合紀錄已拜訪節點</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">queue = [start]</span><br></pre></td></tr></table></figure>
-<p>建立 BFS 佇列並放入起點</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> queue</span><br></pre></td></tr></table></figure>
-<p>當佇列不為空時，持續進行迴圈</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node = queue.pop(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>取出佇列最前端節點</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">    <span class="built_in">print</span>(node)</span><br><span class="line">    visited.add(node)</span><br></pre></td></tr></table></figure>
-<p>若尚未拜訪此節點，則印出目前節點並加入拜訪紀錄</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">queue.extend(neighbor <span class="keyword">for</span> neighbor <span class="keyword">in</span> graph[node] <span class="keyword">if</span> neighbor <span class="keyword">not</span> <span class="keyword">in</span> visited)</span><br></pre></td></tr></table></figure>
-<p>並將所有尚未拜訪的鄰居加入佇列中。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" data-id="cm9njxzsu000040zbbbvd9la0" data-title="python學習筆記" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+國文
+大講義、語文練習、考卷訂正、默背
+大講義25%
+大講義50%、語文練習30%
+大講義75%、語文練習60%
+大講義100%、語文練習100%、考卷訂正50%
+考卷訂正100%、默背
 
 
-
-  
-    <article id="post-0331" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/04/11/0331/" class="article-date">
-  <time class="dt-published" datetime="2025-04-11T10:34:58.000Z" itemprop="datePublished">2025-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/04/11/0331/">二分搜尋程式碼學習筆記</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>):</span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> arr[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid  </span><br><span class="line">        <span class="keyword">elif</span> arr[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>  </span><br><span class="line"></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">15</span>]</span><br><span class="line">target_number = <span class="number">7</span></span><br><span class="line">result = binary_search(numbers, target_number)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result != -<span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;找到 <span class="subst">&#123;target_number&#125;</span> 在索引 <span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;target_number&#125;</span> 不在列表中&quot;</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">逐行分析</span><br><span class="line">---</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">arr, target</span>): </span><br></pre></td></tr></table></figure>
-<p>定義一個名為 binary_search 的函式，接收一個已排序的列表 arr 和要尋找的值 target。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(arr) - <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>設定搜尋範圍的起始與結束位置。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right: </span><br></pre></td></tr></table></figure>
-<p>只要搜尋範圍還沒交錯，就繼續執行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (left + right) // <span class="number">2</span> </span><br></pre></td></tr></table></figure>
-<p>計算中間位置的索引。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> arr[mid] == target: </span><br><span class="line">    <span class="keyword">return</span> mid</span><br></pre></td></tr></table></figure>
-<p>如果中間值剛好是目標，回傳該索引。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">elif</span> arr[mid] &lt; target: </span><br><span class="line">    left = mid + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>如果中間值比目標小，代表目標可能在右半邊，更新 left。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    right = mid - <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>否則目標可能在左半邊，更新 right。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> -<span class="number">1</span> </span><br></pre></td></tr></table></figure>
-<p>如果跳出 while 迴圈還沒找到，代表目標不在列表中。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/04/11/0331/" data-id="cm9dmasha00002azb33iz68ms" data-title="二分搜尋程式碼學習筆記" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+英文
+句型書、歷屆考題、雜誌
+L7單字、L8單字
+L9單字
+句型書、歷屆考題
+補齊學期作業、整理單字
+複習考卷
 
 
-
-  
-    <article id="post-學習心得" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/" class="article-date">
-  <time class="dt-published" datetime="2025-03-29T03:26:02.000Z" itemprop="datePublished">2025-03-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/">學習心得</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="學習內容"><a href="#學習內容" class="headerlink" title="學習內容"></a>學習內容</h2><p> <img src="/2025/04/11/0331/image.png"> </p>
-<h2 id="學習心得"><a href="#學習心得" class="headerlink" title="學習心得"></a>學習心得</h2><p>在這段時間的學習中，我接觸了許多關於人工智慧（GenAI）、Markdown、Git 以及 Python 環境設定等技術。透過探索 GenAI API 和 LLM，我對人工智慧的應用有了更深入的理解，學會了如何與 AI 模型互動，並嘗試使用 API 來開發應用程式。另外，我學習了 Markdown，這讓我能夠更有效率地撰寫文件和筆記，提升了整理資訊的能力。</p>
-<p>在程式開發方面，我熟悉了 Git 和終端機的基本操作，這對於版本控制和開發流程至關重要。同時，透過 Python 環境的配置與實驗，我理解了軟體開發中的依賴管理與環境設定的重要性。最後，我也嘗試建立自己的部落格，這不僅加深了我對 Hexo 靜態網站的認識，也讓我能夠分享自己的學習成果。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/" data-id="cm9dnpcz90000e3zb00gf30vs" data-title="學習心得" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+數學
+講義、薪哲講義、薪哲複習卷
+講義4-1、薪哲講義4-1
+講義4-2、薪哲講義4-2(50%)
+講義4-3、薪哲講義4-2(100%)
+薪哲講義4-3
+薪哲複習卷
 
 
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
-    </div>
-  </div>
+物理
+講義、習作
+習作4-4、4-5
+講義4-4、4-5、習作5-1
+講義5-1、習作5-2
+講義5-2、習作5-3
+講義5-3、考卷訂正
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/05/31/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E8%88%87%E5%AD%B8%E7%BF%92%E9%80%B2%E5%BA%A6%E6%95%B4%E7%90%86/">網站規劃與學習進度整理</a>
-          </li>
-        
-          <li>
-            <a href="/2025/05/03/python%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%20%E2%80%93%20deque%20%E8%88%87%20list%20%E7%9A%84%E6%AF%94%E8%BC%83/">python 學習筆記 – deque 與 list 的比較</a>
-          </li>
-        
-          <li>
-            <a href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">python學習筆記</a>
-          </li>
-        
-          <li>
-            <a href="/2025/04/11/0331/">二分搜尋程式碼學習筆記</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/">學習心得</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+化學
+講義、習作
+習作2-4、2-5
+講義2-4、2-5、習作2...
+            
+          </div>
         
       </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/05/31/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E8%88%87%E5%AD%B8%E7%BF%92%E9%80%B2%E5%BA%A6%E6%95%B4%E7%90%86/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+   
+
+
+<article id="python-python 學習筆記 – deque 與 list 的比較" class="h-entry article article-type-python" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/05/03/python%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%20%E2%80%93%20deque%20%E8%88%87%20list%20%E7%9A%84%E6%AF%94%E8%BC%83/">python 學習筆記 – deque 與 list 的比較</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-05-03T02:48:53.000Z" itemprop="datePublished">2025-05-03</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+             词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              程式碼使用 deque 的 BFS 寫法123456789101112from collections import dequedef bfs_with_deque(graph, start):    visited = set()    queue = deque([start])    while queue:        node = queue.popleft()        if node not in visited:            print(node)            visited.add(node)            queue.extend(neighbor for neighbor in graph[node] if neighbor not in visited)
+使用 List 的 BFS 寫法12345678910def bfs_with_list(graph, start):    visited = set()    queue = [start]    while queue:        node = queue.po...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/05/03/python%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%20%E2%80%93%20deque%20%E8%88%87%20list%20%E7%9A%84%E6%AF%94%E8%BC%83/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+   
+
+
+<article id="post-python學習筆記" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">python學習筆記</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-04-19T01:29:32.000Z" itemprop="datePublished">2025-04-19</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+             词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              程式碼二分搜尋法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647def binary_search(arr, target):    left, right = 0, len(arr) - 1    while left &lt;= right:        mid = (left + right) // 2        if arr[mid] == target:            return mid          elif arr[mid] &lt; target:            left = mid + 1        else:            right = mid - 1    return -1  numbers = [1, 3, 5, 7, 9, 11, 13, 15]target_number = 7result = binary_search(numbers, target_number)if result !...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/04/19/python%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+   
+
+
+<article id="post-0331" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/04/11/0331/">二分搜尋程式碼學習筆記</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-04-11T10:34:58.000Z" itemprop="datePublished">2025-04-11</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+             词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              
+程式碼12345678910111213141516171819202122232425262728def binary_search(arr, target):    left, right = 0, len(arr) - 1    while left &lt;= right:        mid = (left + right) // 2        if arr[mid] == target:            return mid          elif arr[mid] &lt; target:            left = mid + 1        else:            right = mid - 1    return -1  numbers = [1, 3, 5, 7, 9, 11, 13, 15]target_number = 7result = binary_search(numbers, target_number)if result != -1:    print(f&quot;找到 &#123;target_numb...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/04/11/0331/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+   
+
+
+<article id="post-學習心得" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/">學習心得</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-03-29T03:26:02.000Z" itemprop="datePublished">2025-03-29</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+             词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              
+學習內容  
+學習心得在這段時間的學習中，我接觸了許多關於人工智慧（GenAI）、Markdown、Git 以及 Python 環境設定等技術。透過探索 GenAI API 和 LLM，我對人工智慧的應用有了更深入的理解，學會了如何與 AI 模型互動，並嘗試使用 API 來開發應用程式。另外，我學習了 Markdown，這讓我能夠更有效率地撰寫文件和筆記，提升了整理資訊的能力。
+在程式開發方面，我熟悉了 Git 和終端機的基本操作，這對於版本控制和開發流程至關重要。同時，透過 Python 環境的配置與實驗，我理解了軟體開發中的依賴管理與環境設定的重要性。最後，我也嘗試建立自己的部落格，這不僅加深了我對 Hexo 靜態網站的認識，也讓我能夠分享自己的學習成果。
+
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/03/29/%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
       <footer id="footer">
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 Crystal&#39;s Blog<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
+  <div id="footer-info" class="inner">
+    
+    &copy; 2025 Crystal Chang<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
 
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
 
   </div>
+  <script src="/js/light-dark-switch.js"></script>
 </body>
 </html>
