@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。） 在現代的AI中，通常不會直接使用剛完成的大模型。 一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Founda">
+  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。） 在現代的AI中，通常不會直接使用剛完成的大模型。 一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Foundation model（基礎模型&#x2F;base model)，接著透過Post-training&#x2F;Co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
 <meta property="og:url" content="http://example.com/2026/03/15/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E5%BE%8C%E8%A8%93%E7%B7%B4(Post-Training)%E8%88%87%E9%81%BA%E5%BF%98%E5%95%8F%E9%A1%8C%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/index.html">
 <meta property="og:site_name" content="Crystal&#39;s Blog">
-<meta property="og:description" content="【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。） 在現代的AI中，通常不會直接使用剛完成的大模型。 一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Founda">
+<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。） 在現代的AI中，通常不會直接使用剛完成的大模型。 一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Foundation model（基礎模型&#x2F;base model)，接著透過Post-training&#x2F;Co">
 <meta property="og:locale" content="zn_CH">
 <meta property="article:published_time" content="2026-03-15T09:17:40.000Z">
-<meta property="article:modified_time" content="2026-05-10T09:20:38.848Z">
+<meta property="article:modified_time" content="2026-05-10T09:28:02.923Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
@@ -204,7 +204,7 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="【學習筆記】後訓練-Post-Training-與遺忘問題：生成式-AI-時代下的機器學習-李宏毅老師-2025"><a href="#【學習筆記】後訓練-Post-Training-與遺忘問題：生成式-AI-時代下的機器學習-李宏毅老師-2025" class="headerlink" title="【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)"></a>【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)</h1><p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講</p>
+          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講</p>
 <p><code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。）</code></p>
 <p>在現代的AI中，通常不會直接使用剛完成的大模型。</p>
 <p>一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Foundation model（基礎模型&#x2F;base model)，接著透過Post-training&#x2F;Continual learning將其微調成Fine-tuned Model(例如Chat&#x2F;Instruct Model).</p>
@@ -254,6 +254,7 @@
 <li><h4 id="Self-output"><a href="#Self-output" class="headerlink" title="Self-output:"></a>Self-output:</h4></li>
 </ol>
 <p>在上述Peraphrase的概念中，進一步，直接讓模型使用Foundation Model生成的答案當作練習目標（類似RL），甚至可以將過程中的Foundation Model換成其他的比較強的LLM（用語言模型教語言模型），也同樣能減少遺忘。</p>
+<hr>
 <h3 id="個人結論："><a href="#個人結論：" class="headerlink" title="個人結論："></a>個人結論：</h3><p>Post-training可以讓模型輕易在目標任務上提升能力。但有機率忘記原本的基本技能。必須使用上述的各種方式，避免遺忘的發生。</p>
 <p>這堂課程中也可以發現到，比起「如何訓練模型」，「如何取得訓練模型使用的資料」似乎更加的困難與複雜。在大公司獨佔許多資料的現代，各種研究人員如何發揮創意，利用各種方式克服困難，也讓我看到了AI工程中非常有趣的一面。</p>
 
@@ -268,10 +269,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2026/03/18/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91LLM%E7%9A%84%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83(reasoning)%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/"
+      title="【學習筆記】LLM的深度思考(reasoning)：生成式 AI 時代下的機器學習 (李宏毅老師 2025)"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        【學習筆記】LLM的深度思考(reasoning)：生成式 AI 時代下的機器學習 (李宏毅老師 2025)
         
     </p>
   </a>

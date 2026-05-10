@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型：語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語">
+  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型：語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語言接龍能力 supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的 RLHF：告訴模型怎麼樣的回答是好的  其中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
 <meta property="og:url" content="http://example.com/2026/03/12/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E9%A0%90%E8%A8%93%E7%B7%B4%E2%80%93%E5%B0%8D%E9%BD%8A(Pretrain-Alignment)%20%E7%9A%84%E5%BC%B7%E5%A4%A7%E8%88%87%E6%A5%B5%E9%99%90%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/index.html">
 <meta property="og:site_name" content="Crystal&#39;s Blog">
-<meta property="og:description" content="【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型：語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語">
+<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型：語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語言接龍能力 supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的 RLHF：告訴模型怎麼樣的回答是好的  其中">
 <meta property="og:locale" content="zn_CH">
 <meta property="article:published_time" content="2026-03-12T09:13:18.000Z">
-<meta property="article:modified_time" content="2026-05-10T09:19:59.938Z">
+<meta property="article:modified_time" content="2026-05-10T09:28:11.469Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
@@ -197,14 +197,14 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.7k words 
+            2.6k words 
           </div>
         </div>
         
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="【學習筆記】預訓練–對齊-Pretrain-Alignment-的強大與極限：生成式-AI-時代下的機器學習-李宏毅老師-2025"><a href="#【學習筆記】預訓練–對齊-Pretrain-Alignment-的強大與極限：生成式-AI-時代下的機器學習-李宏毅老師-2025" class="headerlink" title="【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)"></a>【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)</h1><p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講</p>
+          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講</p>
 <p><code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。）</code></p>
 <h3 id="如何訓練語言模型："><a href="#如何訓練語言模型：" class="headerlink" title="如何訓練語言模型："></a>如何訓練語言模型：</h3><p>語言模型的訓練大致分為三個階段：</p>
 <ol>
