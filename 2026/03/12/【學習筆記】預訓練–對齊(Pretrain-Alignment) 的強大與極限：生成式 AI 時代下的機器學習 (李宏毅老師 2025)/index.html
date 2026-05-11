@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型：語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語言接龍能力 supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的 RLHF：告訴模型怎麼樣的回答是好的  其中">
+  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型： 語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語言接龍能力 supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的 RLHF：告訴模型怎麼樣的回答是好的  其">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
 <meta property="og:url" content="http://example.com/2026/03/12/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E9%A0%90%E8%A8%93%E7%B7%B4%E2%80%93%E5%B0%8D%E9%BD%8A(Pretrain-Alignment)%20%E7%9A%84%E5%BC%B7%E5%A4%A7%E8%88%87%E6%A5%B5%E9%99%90%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/index.html">
 <meta property="og:site_name" content="Crystal&#39;s Blog">
-<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型：語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語言接龍能力 supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的 RLHF：告訴模型怎麼樣的回答是好的  其中">
+<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。） 如何訓練語言模型： 語言模型的訓練大致分為三個階段：  Pre-train：讓語言模型具備基本的語言接龍能力 supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的 RLHF：告訴模型怎麼樣的回答是好的  其">
 <meta property="og:locale" content="zn_CH">
 <meta property="article:published_time" content="2026-03-12T09:13:18.000Z">
-<meta property="article:modified_time" content="2026-05-10T15:35:01.253Z">
+<meta property="article:modified_time" content="2026-05-11T02:06:22.877Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
@@ -197,7 +197,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.8k words 
+            2.7k words 
           </div>
         </div>
         
@@ -206,63 +206,122 @@
         
           <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第五講</p>
 <p><code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube 之公開課程影片與簡報。）</code></p>
-<h3 id="如何訓練語言模型："><a href="#如何訓練語言模型：" class="headerlink" title="如何訓練語言模型："></a>如何訓練語言模型：</h3><p>語言模型的訓練大致分為三個階段：</p>
+<h3 id="如何訓練語言模型：">如何訓練語言模型：</h3>
+<p>語言模型的訓練大致分為三個階段：</p>
 <ol>
 <li>Pre-train：讓語言模型具備基本的語言接龍能力</li>
 <li>supervised Fine-tuning(SFT)：告訴模型輸出哪些是對的</li>
 <li>RLHF：告訴模型怎麼樣的回答是好的</li>
 </ol>
-<p>其中，第2&#x2F;3階段需要人類參與，這堂課將這兩階段定義為Alignment(Finetune)。指的是希望模型的輸出「對齊」人類的期待</p>
-<h3 id="Pre-train"><a href="#Pre-train" class="headerlink" title="Pre-train"></a>Pre-train</h3><p>單純Pre-train完的模型其實還不能直接與人類對話，這個階段卻是決定模型智商的關鍵</p>
+<p>其中，第2/3階段需要人類參與，這堂課將這兩階段定義為Alignment(Finetune)。指的是希望模型的輸出「對齊」人類的期待</p>
+<h3 id="Pre-train">Pre-train</h3>
+<p>單純Pre-train完的模型其實還不能直接與人類對話，這個階段卻是決定模型智商的關鍵</p>
 <ul>
-<li><h4 id="如何達成有效的Pre-train："><a href="#如何達成有效的Pre-train：" class="headerlink" title="如何達成有效的Pre-train："></a><strong>如何達成有效的Pre-train</strong>：</h4></li>
+<li>
+<h4 id="如何達成有效的Pre-train："><strong>如何達成有效的Pre-train</strong>：</h4>
+</li>
 </ul>
-<p>研究顯示，在訓練模型前，模型是將各個特徵合成後記住整體為一個實體（例如Ａ&#x3D;a+b+c）。這時，給予同一個概念多種不同版本的描述方式（例如A&#x3D;c+b+a&#x2F;A&#x3D;b+a+c..），變能使模型將Ａ分別與a\b\c對應。</p>
-<p>這顯示，Pre-train時使用多種不同的描述方式（不同版本）介紹同一個東西，會讓模型的正確率大幅提高。另外，訓練時有部分實體擁有多種版本的介紹即可，概念上類似讓模型學習如何理解事物，此時其他實體即使沒有多種版本仍可以正確推理 [^1]。</p>
+<p>研究顯示，在訓練模型前，模型是將各個特徵合成後記住整體為一個實體（例如Ａ=a+b+c）。這時，給予同一個概念多種不同版本的描述方式（例如A=c+b+a/A=b+a+c…），變能使模型將Ａ分別與a\b\c對應。</p>
+<p>這顯示，Pre-train時使用多種不同的描述方式（不同版本）介紹同一個東西，會讓模型的正確率大幅提高。另外，訓練時有部分實體擁有多種版本的介紹即可，概念上類似讓模型學習如何理解事物，此時其他實體即使沒有多種版本仍可以正確推理 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
 <ul>
-<li><h4 id="Pre-train資料的品質："><a href="#Pre-train資料的品質：" class="headerlink" title="Pre-train資料的品質："></a><strong>Pre-train資料的品質</strong>：</h4></li>
+<li>
+<h4 id="Pre-train資料的品質："><strong>Pre-train資料的品質</strong>：</h4>
+</li>
 </ul>
-<p>Pre-train資料的品質非常重要，將網路上抓下來的資料改寫的比較乾淨，會使模型的訓練更有效（使用的資料量較少）[^2]。</p>
-<p>另外，在有限的算力下，讓模型儘量看越多不同的資料，效果會比反覆看一樣的資料還要好。過度重複多次相同的資料，對模型反而會造成傷害[^3] [^4]。</p>
-<p>目前大型語言模型使用了15T左右的Token進行訓練。Hugging Face透過搜集網路資料整理出約15T Token的高品質資料集「FineWeb」，讓大家可以輕鬆使用。然而，研究指出，網路上所有可能取得的資料有可能被用盡。推測於2028～2030年以後，語言模型將因為網路上可取得的token不夠而被限制發展。若過度訓練（overtraining）小模型，則其期限可能會提早到2027年[^5] [^6] [^7]。</p>
+<p>Pre-train資料的品質非常重要，將網路上抓下來的資料改寫的比較乾淨，會使模型的訓練更有效（使用的資料量較少）<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
+<p>另外，在有限的算力下，讓模型儘量看越多不同的資料，效果會比反覆看一樣的資料還要好。過度重複多次相同的資料，對模型反而會造成傷害<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。</p>
+<p>目前大型語言模型使用了15T左右的Token進行訓練。Hugging Face透過搜集網路資料整理出約15T Token的高品質資料集「FineWeb」，讓大家可以輕鬆使用。然而，研究指出，網路上所有可能取得的資料有可能被用盡。推測於2028～2030年以後，語言模型將因為網路上可取得的token不夠而被限制發展。若過度訓練（overtraining）小模型，則其期限可能會提早到2027年<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> <sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>。</p>
 <ul>
-<li><h4 id="pretrain副作用："><a href="#pretrain副作用：" class="headerlink" title="pretrain副作用："></a><strong>pretrain副作用</strong>：</h4></li>
+<li>
+<h4 id="pretrain副作用："><strong>pretrain副作用</strong>：</h4>
+</li>
 </ul>
-<p>Pre-train時模型如果看到「髒東西（例如不雅字眼）」，後續很難真正清除掉。透過實驗中的logic lens技術觀察發現，沒有對齊的模型在第18層就想說髒話，做完對齊的模型看起來下降想說髒話的機率，其實只是激發說髒話的數值（k值）將低，髒話的神經元還是存在 [^8]。</p>
+<p>Pre-train時模型如果看到「髒東西（例如不雅字眼）」，後續很難真正清除掉。透過實驗中的logic lens技術觀察發現，沒有對齊的模型在第18層就想說髒話，做完對齊的模型看起來下降想說髒話的機率，其實只是激發說髒話的數值（k值）將低，髒話的神經元還是存在 <sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>。</p>
 <p>根據老師課中生動的說法：Pre-train創造了怪物，而alignmment只是一張為它戴上了面具</p>
-<h3 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h3><p>Pre-train完的基礎模型無法直接使用，但是經過Alignment後，模型表現的行為可以有大福進步 [^9]。</p>
+<h3 id="Alignment">Alignment</h3>
+<p>Pre-train完的基礎模型無法直接使用，但是經過Alignment後，模型表現的行為可以有大福進步 <sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>。</p>
 <ul>
-<li><h4 id="Alignment資料來源："><a href="#Alignment資料來源：" class="headerlink" title="Alignment資料來源："></a><strong>Alignment資料來源</strong>：</h4></li>
+<li>
+<h4 id="Alignment資料來源："><strong>Alignment資料來源</strong>：</h4>
+</li>
 </ul>
-<p>Alignment使用的資料量不需要很多就可以有很好的效果，但是資料的品質非常重要 [^10] [^11]。有趣的是，實驗顯示中國社群「弱智吧」中的資料有很好的學習效果。推測可能是由於其問題答案多由GPT4生成，相等於對模型進行了知識蒸餾（Knowledge distillation），也就是讓小模型模仿大模型的回答，大幅降低訓練模型的經費[^12]。此外，選擇較長的資料容易帶來更好的表現[^13]。</p>
+<p>Alignment使用的資料量不需要很多就可以有很好的效果，但是資料的品質非常重要 <sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup> <sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>。有趣的是，實驗顯示中國社群「弱智吧」中的資料有很好的學習效果。推測可能是由於其問題答案多由GPT4生成，相等於對模型進行了知識蒸餾（Knowledge distillation），也就是讓小模型模仿大模型的回答，大幅降低訓練模型的經費<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>。此外，選擇較長的資料容易帶來更好的表現<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>。</p>
 <ul>
-<li><h4 id="Alignment的方法："><a href="#Alignment的方法：" class="headerlink" title="Alignment的方法："></a>Alignment的方法：</h4></li>
+<li>
+<h4 id="Alignment的方法：">Alignment的方法：</h4>
+</li>
 </ul>
-<p>違反直覺的是，模型在Alignment前後的實際行為其實差異並不大。實驗中，被判定為”Shifted”的Token（可以裡解為原來模型不會講的話）比例非常低，且幾乎都是連接詞、結束標點符號[^14]。</p>
+<p>違反直覺的是，模型在Alignment前後的實際行為其實差異並不大。實驗中，被判定為&quot;Shifted&quot;的Token（可以裡解為原來模型不會講的話）比例非常低，且幾乎都是連接詞、結束標點符號<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup>。</p>
 <p>因此，給予模型學習的問題，內容其實並不重要，將任何一句話的後半段截斷，請GPT回答，即可將整筆資料交給模型學習。</p>
-<p>既然Alignment只是改變少數Token的機率，那麼能否人為強制修改模型輸出內容的機率？研究發現，只要人為製造三個限制（增加結束符號的機率&#x2F;手動改變符號出現的機率&#x2F;避免重複出現的符號）。基礎模型的能力即可小幅提升[^15]。</p>
-<p>既然如此，或許根本不需要給予模型完整的「問題+答案」，而是直接要求模型學習某種「答案的樣子」，就可以達成效果。這種方法被稱為Response Tuning[^16]。</p>
+<p>既然Alignment只是改變少數Token的機率，那麼能否人為強制修改模型輸出內容的機率？研究發現，只要人為製造三個限制（增加結束符號的機率/手動改變符號出現的機率/避免重複出現的符號）。基礎模型的能力即可小幅提升<sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup>。</p>
+<p>既然如此，或許根本不需要給予模型完整的「問題+答案」，而是直接要求模型學習某種「答案的樣子」，就可以達成效果。這種方法被稱為Response Tuning<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup>。</p>
 <ul>
-<li><h4 id="Alignment的極限："><a href="#Alignment的極限：" class="headerlink" title="Alignment的極限："></a><strong>Alignment的極限</strong>：</h4></li>
+<li>
+<h4 id="Alignment的極限："><strong>Alignment的極限</strong>：</h4>
+</li>
 </ul>
-<p>已知透過模型進行aglinment本質是透過改變token輸出機率影響模型的說話風格，因此也存在作用上的極限。<br>研究顯示，雖然微調過後的模型看似有跟ChatGPT相似的能力，實際答案內容卻仍有錯誤，只能模仿大模型的「風格」，難以學習新知識[^17]。</p>
+<p>已知透過模型進行aglinment本質是透過改變token輸出機率影響模型的說話風格，因此也存在作用上的極限。<br>
+研究顯示，雖然微調過後的模型看似有跟ChatGPT相似的能力，實際答案內容卻仍有錯誤，只能模仿大模型的「風格」，難以學習新知識<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup>。</p>
 <p>科學家將模型面對的問題分四類觀察效果：</p>
 <ol>
-<li><p>Highly Known：模型本來就會，只要根據機率選擇回答。</p>
+<li>
+<p>Highly Known：模型本來就會，只要根據機率選擇回答。</p>
 </li>
-<li><p>Maybe known：換一組問法就可以回答，這類問題在Alignment中獲得的幫助最大。</p>
+<li>
+<p>Maybe known：換一組問法就可以回答，這類問題在Alignment中獲得的幫助最大。</p>
 </li>
-<li><p>Weakly known：需進行隨機採樣（sampleing），才有機會答對。</p>
+<li>
+<p>Weakly known：需進行隨機採樣（sampleing），才有機會答對。</p>
 </li>
-<li><p>Unknown：模型完全無法回答。</p>
+<li>
+<p>Unknown：模型完全無法回答。</p>
 </li>
 </ol>
 <p>研究證明，在已知的領域，模型正確率增長非常快。但如果想要讓模型學習全新（Unknown）的知識，模型能力反而會下降。[arXiv: 2405.05904]。</p>
 <p>訓練時，給模型「已知的問題＋模型自己的答案」進行微調，效果會優於「不會的問題＋人類提供的正確答案」。因此，RL（也就是讓模型輸出多個答案，由人類評價出好的答案讓模型提高或減低機率的方法）是Alignment的好方法，因為其中每一筆訓練資料都是模型自己的答案，是激發模型淺力的行為。</p>
 <hr>
-<h3 id="個人總結："><a href="#個人總結：" class="headerlink" title="個人總結："></a>個人總結：</h3><p>Pre-train是決定大型語言模型能力上限的關鍵，模型看過各式各樣的大量資料，本身就已經非常強大。</p>
+<h3 id="個人總結：">個人總結：</h3>
+<p>Pre-train是決定大型語言模型能力上限的關鍵，模型看過各式各樣的大量資料，本身就已經非常強大。</p>
 <p>Alignment是畫龍點睛，能激發模型潛力、引導模型說出人類喜歡的答案，但它的極限在於，只能強化模型已經知道的事情，無法教會模型新的技能。</p>
-<p>[^1]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2309.14316">arXiv 2309.14316</a><br>[^2]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.16380">arXiv 2401.16380</a><br>[^3]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.16264">arXiv 2305.16264</a><br>[^4]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.16295">arXiv 2409.16295</a><br>[^5]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2211.04325">arXiv 2211.04325</a><br>[^6]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.21783">arXiv 2407.21783</a><br>[^7]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2412.19437">arXiv 2412.19437</a><br>[^8]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.01967">arXiv 2401.01967</a><br>[^9]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.00096">arXiv 2409.00096</a><br>[^10]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2307.09288">arXiv 2307.09288</a><br>[^11]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.11206">arXiv 2305.11206</a><br>[^12]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2403.18058">arXiv 2403.18058</a><br>[^13]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.04833">arXiv 2402.04833</a><br>[^14]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2312.01552">arXiv 2312.01552</a><br>[^15]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.14254">arXiv 2409.14254</a><br>[^16]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.05605">arXiv 2410.02465v2</a><br>[^17]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.15717">arXiv 2305.15717</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2309.14316">arXiv 2309.14316</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.16380">arXiv 2401.16380</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.16264">arXiv 2305.16264</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.16295">arXiv 2409.16295</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2211.04325">arXiv 2211.04325</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.21783">arXiv 2407.21783</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2412.19437">arXiv 2412.19437</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.01967">arXiv 2401.01967</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.00096">arXiv 2409.00096</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2307.09288">arXiv 2307.09288</a> <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.11206">arXiv 2305.11206</a> <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2403.18058">arXiv 2403.18058</a> <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.04833">arXiv 2402.04833</a> <a href="#fnref13" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2312.01552">arXiv 2312.01552</a> <a href="#fnref14" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.14254">arXiv 2409.14254</a> <a href="#fnref15" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.05605">arXiv 2410.02465v2</a> <a href="#fnref16" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn17" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.15717">arXiv 2305.15717</a> <a href="#fnref17" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
         
       </div>

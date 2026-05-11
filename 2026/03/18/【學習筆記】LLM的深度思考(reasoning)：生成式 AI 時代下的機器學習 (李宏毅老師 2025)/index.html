@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第七講（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） LLM的推理（Reasoning）以前陣子流行的DeepSeek R1為例，模型在問題與答案間，多了一段「思考」的過程。 這個中間的「思考」可被稱為推理（Reasoning）。可能包含驗證（Verification）、探索（Explore">
+  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第七講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） LLM的推理（Reasoning） 以前陣子流行的DeepSeek R1為例，模型在問題與答案間，多了一段「思考」的過程。 這個中間的「思考」可被稱為推理（Reasoning）。可能包含驗證（Verification）、探索（Explo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【學習筆記】LLM的深度思考(reasoning)：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
 <meta property="og:url" content="http://example.com/2026/03/18/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91LLM%E7%9A%84%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83(reasoning)%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/index.html">
 <meta property="og:site_name" content="Crystal&#39;s Blog">
-<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第七講（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） LLM的推理（Reasoning）以前陣子流行的DeepSeek R1為例，模型在問題與答案間，多了一段「思考」的過程。 這個中間的「思考」可被稱為推理（Reasoning）。可能包含驗證（Verification）、探索（Explore">
+<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第七講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） LLM的推理（Reasoning） 以前陣子流行的DeepSeek R1為例，模型在問題與答案間，多了一段「思考」的過程。 這個中間的「思考」可被稱為推理（Reasoning）。可能包含驗證（Verification）、探索（Explo">
 <meta property="og:locale" content="zn_CH">
 <meta property="article:published_time" content="2026-03-18T10:57:40.000Z">
 <meta property="article:modified_time" content="2026-05-10T15:19:58.783Z">
@@ -204,11 +204,13 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第七講<br><code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。）</code></p>
-<h3 id="LLM的推理（Reasoning）"><a href="#LLM的推理（Reasoning）" class="headerlink" title="LLM的推理（Reasoning）"></a>LLM的推理（Reasoning）</h3><p>以前陣子流行的DeepSeek R1為例，模型在問題與答案間，多了一段「思考」的過程。</p>
+          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第七講<br>
+<code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。）</code></p>
+<h3 id="LLM的推理（Reasoning）">LLM的推理（Reasoning）</h3>
+<p>以前陣子流行的DeepSeek R1為例，模型在問題與答案間，多了一段「思考」的過程。</p>
 <p>這個中間的「思考」可被稱為推理（Reasoning）。可能包含驗證（Verification）、探索（Explore）、規劃（Planning）。</p>
 <p>這種模式被稱為Test-time Compute，表示在測試時投入更大的算力，可能取得更好的結果，也就是<strong>深度不夠長度來湊</strong>的概念。</p>
-<p>基本上，可以選擇在訓練時投入大量算力，抑或是在思考時再投入，有辦法取得相似的能力結果[^1]。</p>
+<p>基本上，可以選擇在訓練時投入大量算力，抑或是在思考時再投入，有辦法取得相似的能力結果<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
 <p>現代大量使用深度思考，以下是四種不同的方法用來增強或打造模型推理能力。</p>
 <ol>
 <li>更強的思維鏈(Chain-of-Thought,CoT)</li>
@@ -217,31 +219,34 @@
 <li>以結果為導向學習推理(Reinforcement Learing,RL)</li>
 </ol>
 <p>後兩者需要微調參數才可以執行</p>
-<h3 id="1-更強的思維鏈-Chain-of-Thought-CoT"><a href="#1-更強的思維鏈-Chain-of-Thought-CoT" class="headerlink" title="1.更強的思維鏈(Chain-of-Thought,CoT)"></a>1.更強的思維鏈(Chain-of-Thought,CoT)</h3><p>CoT是2022開始擁有的概念，不需要改變模型參數，直接透過Prompt引導模型思考回答。</p>
+<h3 id="1-更強的思維鏈-Chain-of-Thought-CoT">1.更強的思維鏈(Chain-of-Thought,CoT)</h3>
+<p>CoT是2022開始擁有的概念，不需要改變模型參數，直接透過Prompt引導模型思考回答。</p>
 <ul>
-<li><strong>few-shot CoT</strong>：給予模型範例（問題＋解法＋答案），再問模型問題，模型便會模仿這種回答方式[^2]。</li>
-<li><strong>zero-shot CoT</strong>：直接跟模型說「think step by step」，強迫模型按照過程回答[^3]。</li>
-<li><strong>Long CoT</strong>：現代模型進行非常長的推理過程[^4]。</li>
+<li><strong>few-shot CoT</strong>：給予模型範例（問題＋解法＋答案），再問模型問題，模型便會模仿這種回答方式<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</li>
+<li><strong>zero-shot CoT</strong>：直接跟模型說「think step by step」，強迫模型按照過程回答<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</li>
+<li><strong>Long CoT</strong>：現代模型進行非常長的推理過程<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。</li>
 <li><strong>Supervised CoT</strong>：在Promt中使用詳細的敘述教學模型如何CoT，讓模型在輸出中使用模仿推理形式的方式思考。然而模型能力有限，不一定每個模型都能達成這個模式。</li>
 </ul>
-<h3 id="2-給模型推論工作流程"><a href="#2-給模型推論工作流程" class="headerlink" title="2.給模型推論工作流程"></a>2.給模型推論工作流程</h3><p>強迫模型對於同一個問題回答多次，因為每次的回答方式可能不同，便能產生多種可能性的思考。</p>
+<h3 id="2-給模型推論工作流程">2.給模型推論工作流程</h3>
+<p>強迫模型對於同一個問題回答多次，因為每次的回答方式可能不同，便能產生多種可能性的思考。</p>
 <ul>
-<li><strong>無限猴子模型理論</strong>：只要讓模型無限次的回答同一問題，一定會有一次是對的[^5]。</li>
+<li><strong>無限猴子模型理論</strong>：只要讓模型無限次的回答同一問題，一定會有一次是對的<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>。</li>
 <li><strong>如何判斷這麼多回答何者正確？</strong>：</li>
 </ul>
 <ol>
 <li>Majority Vote（self-consistency）:選出現次數最多的答案（非常有效）。</li>
-<li>Confidence（used in CoT decoding）：觀察對於每個答案的自信（機率）選擇最高的。實作時，可以將模型認為的答案放在指令<answer> 與</answer>中間，避免找不到答案。<br>3.使用Verifier： 訓練另一個語言模型為Verifier，將所有答案放進去評估，選出最有可能的答案[^6]。</li>
+<li>Confidence（used in CoT decoding）：觀察對於每個答案的自信（機率）選擇最高的。實作時，可以將模型認為的答案放在指令<answer> 與</answer>中間，避免找不到答案。<br>
+3.使用Verifier： 訓練另一個語言模型為Verifier，將所有答案放進去評估，選出最有可能的答案<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。</li>
 </ol>
 <ul>
 <li><strong>讓模型產生多個答案的方法</strong>：</li>
 </ul>
 <ol>
 <li>Parallel：一次輸出多種答案</li>
-<li>Sequential：輸出完第一個答案再根據它用來輸出第二個….以此類推</li>
-<li>Parallel+Sequential:先生成出多種答案，再分別根據這些答案繼續生成下一批答案[^7]。</li>
+<li>Sequential：輸出完第一個答案再根據它用來輸出第二個…以此類推</li>
+<li>Parallel+Sequential:先生成出多種答案，再分別根據這些答案繼續生成下一批答案<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>。</li>
 </ol>
-<p>現代模型則會在過程中進行驗證。讓每步驟皆經過一個Process Verifier來思考。 </p>
+<p>現代模型則會在過程中進行驗證。讓每步驟皆經過一個Process Verifier來思考。</p>
 <!--實作下，透過下promt的方式讓模型將每一個步驟分開，讓模型在生成到</step>時停止生成，使用這個process verifier驗證哪一個stpe1是正確的。
 
  如何訓練process verifier?
@@ -255,21 +260,45 @@ training data :問題＋正確答案
 beam search:使用process verifier評分後，每次保留最好的n條路徑，剩餘的路徑不予理會。
 
 beam search可以換成很多不同的方法，例如heuristic search algorithm\monte carlo tree search等等，都可以幫助。-->
-
-
-<h3 id="3-教模型推理過程-Imitation-Learning"><a href="#3-教模型推理過程-Imitation-Learning" class="headerlink" title="3.教模型推理過程(Imitation Learning)"></a>3.教模型推理過程(Imitation Learning)</h3><p>接下來兩種方法屬於Post-training的一種，賦予模型Reasoning的能力，需要微調模型參數才能執行。</p>
+<h3 id="3-教模型推理過程-Imitation-Learning">3.教模型推理過程(Imitation Learning)</h3>
+<p>接下來兩種方法屬於Post-training的一種，賦予模型Reasoning的能力，需要微調模型參數才能執行。</p>
 <p>要求模型不只輸出答案，還要輸入「過程」。訓練資料的格式為「問題＋推理過程＋答案」。</p>
 <ul>
-<li><p><strong>訓練資料中的推論過程從哪裡來？</strong>：<br>透過CoT，要求模型解題時，把過程也稱生成出來。只要最終答案正確，就假設過程也是正確的。或是可以直接使用蒸餾（knowledge </p>
+<li>
+<p><strong>訓練資料中的推論過程從哪裡來？</strong>：<br>
+透過CoT，要求模型解題時，把過程也稱生成出來。只要最終答案正確，就假設過程也是正確的。或是可以直接使用蒸餾（knowledge</p>
 </li>
-<li><p><strong>過程中每一步真的都是對的嗎？</strong>：<br>其實模型中間可能會推論錯誤，但有糾正自己的能力。如果全部選擇「推論過程全對」的訓練資料，模型便無法學習自我糾正這方面的能力。<br>也可以反過來，刻意創造出中間有錯，但是答案正確的訓練資料加強這方面能力（例如：Step1&gt;Wrong Step2&gt;Verifier的回饋（讓人類閱讀順暢）&gt;Another wrong Step2&gt;Step1&gt;）。這種Journey Learningc會讓模型比Shortcut Learning（全對的過程）表現更好。</p>
+<li>
+<p><strong>過程中每一步真的都是對的嗎？</strong>：<br>
+其實模型中間可能會推論錯誤，但有糾正自己的能力。如果全部選擇「推論過程全對」的訓練資料，模型便無法學習自我糾正這方面的能力。<br>
+也可以反過來，刻意創造出中間有錯，但是答案正確的訓練資料加強這方面能力（例如：Step1&gt;Wrong Step2&gt;Verifier的回饋（讓人類閱讀順暢）&gt;Another wrong Step2&gt;Step1&gt;）。這種Journey Learningc會讓模型比Shortcut Learning（全對的過程）表現更好。</p>
 </li>
 </ul>
-<h3 id="4-以結果為導向學習推理-Reinforcement-Learing-RL"><a href="#4-以結果為導向學習推理-Reinforcement-Learing-RL" class="headerlink" title="4.以結果為導向學習推理(Reinforcement Learing,RL)"></a>4.以結果為導向學習推理(Reinforcement Learing,RL)</h3><p>DeepSeek R1<strong>主要</strong>使用的方法。核心概念為<strong>Accuracy as Reward</strong>。訓練資料只有「問題＋答案」，讓模型自行推理與回答，只判斷答案對不對，不管它中間的思考過程。</p>
+<h3 id="4-以結果為導向學習推理-Reinforcement-Learing-RL">4.以結果為導向學習推理(Reinforcement Learing,RL)</h3>
+<p>DeepSeek R1<strong>主要</strong>使用的方法。核心概念為<strong>Accuracy as Reward</strong>。訓練資料只有「問題＋答案」，讓模型自行推理與回答，只判斷答案對不對，不管它中間的思考過程。</p>
 <p>驚訝的是，研究人員在模型中觀察到了<strong>Aha Moment</strong>的存在。模型在沒有被明確教學或引導下，竟然自行停下來思考，主動糾正自身。</p>
 <hr>
-<h3 id="個人總結："><a href="#個人總結：" class="headerlink" title="個人總結："></a>個人總結：</h3><p>RL本質上是「增強模型原有的能力」。如果模型本身並沒有Reasoning的潛力，那麼RL也沒有用。反之，DeepSeek V3 Base之所以能被訓練成強大的R1，是因為其原本就擁有發生Aha Moment的潛能，而RL只是刺激並放大了這個能力。</p>
-<p>[^1]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2104.03113">arXiv 2104.03113</a><br>[^2]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2201.11903">arXiv 2201.11903</a><br>[^3]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2205.11916">arXiv 2205.11916</a><br>[^4]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.09567">arXiv 2503.09567</a><br>[^5]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.21787">arXiv 2407.21787</a><br>[^6]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2110.14168">arXiv 2110.14168</a><br>[^7]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2408.03314">arXiv 2408.03314</a></p>
+<h3 id="個人總結：">個人總結：</h3>
+<p>RL本質上是「增強模型原有的能力」。如果模型本身並沒有Reasoning的潛力，那麼RL也沒有用。反之，DeepSeek V3 Base之所以能被訓練成強大的R1，是因為其原本就擁有發生Aha Moment的潛能，而RL只是刺激並放大了這個能力。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2104.03113">arXiv 2104.03113</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2201.11903">arXiv 2201.11903</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2205.11916">arXiv 2205.11916</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.09567">arXiv 2503.09567</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.21787">arXiv 2407.21787</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2110.14168">arXiv 2110.14168</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2408.03314">arXiv 2408.03314</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
         
       </div>

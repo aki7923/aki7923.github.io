@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第八講（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） 模型可能「想太多」？上次的課程說明了大型語言模型具備「推理（Reasoning）」能力時表現可以大幅提升。然而，模型在實際推理時，容易想太多，例如驗算太多次，會消耗太多不必要的算力資源。 直覺上，可能會覺得模型的推理越長，結果應該越好。然">
+  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第八講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） 模型可能「想太多」？ 上次的課程說明了大型語言模型具備「推理（Reasoning）」能力時表現可以大幅提升。然而，模型在實際推理時，容易想太多，例如驗算太多次，會消耗太多不必要的算力資源。 直覺上，可能會覺得模型的推理越長，結果應該越好">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【學習筆記】別讓「推理」大型語言模型想太多：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
 <meta property="og:url" content="http://example.com/2026/03/20/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E5%88%A5%E8%AE%93%E3%80%8C%E6%8E%A8%E7%90%86%E3%80%8D%E5%A4%A7%E5%9E%8B%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%83%B3%E5%A4%AA%E5%A4%9A%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/index.html">
 <meta property="og:site_name" content="Crystal&#39;s Blog">
-<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第八講（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） 模型可能「想太多」？上次的課程說明了大型語言模型具備「推理（Reasoning）」能力時表現可以大幅提升。然而，模型在實際推理時，容易想太多，例如驗算太多次，會消耗太多不必要的算力資源。 直覺上，可能會覺得模型的推理越長，結果應該越好。然">
+<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第八講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） 模型可能「想太多」？ 上次的課程說明了大型語言模型具備「推理（Reasoning）」能力時表現可以大幅提升。然而，模型在實際推理時，容易想太多，例如驗算太多次，會消耗太多不必要的算力資源。 直覺上，可能會覺得模型的推理越長，結果應該越好">
 <meta property="og:locale" content="zn_CH">
 <meta property="article:published_time" content="2026-03-20T09:32:12.000Z">
-<meta property="article:modified_time" content="2026-05-10T15:14:22.770Z">
+<meta property="article:modified_time" content="2026-05-11T02:06:27.159Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
@@ -204,27 +204,56 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第八講<br><code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。）</code></p>
-<h3 id="模型可能「想太多」？"><a href="#模型可能「想太多」？" class="headerlink" title="模型可能「想太多」？"></a>模型可能「想太多」？</h3><p>上次的課程說明了大型語言模型具備「推理（Reasoning）」能力時表現可以大幅提升。然而，模型在實際推理時，容易想太多，例如驗算太多次，會消耗太多不必要的算力資源。</p>
-<p>直覺上，可能會覺得模型的推理越長，結果應該越好。然而，很多研究顯示，推理的程度與正確率其實為<strong>負相關</strong>。推理越長，正確率往往越低。其中一篇比較嚴謹的論文，結果依然證明，模型推理長度對於正確率真的沒有什麼幫助[^1]。</p>
+          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第八講<br>
+<code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。）</code></p>
+<h3 id="模型可能「想太多」？">模型可能「想太多」？</h3>
+<p>上次的課程說明了大型語言模型具備「推理（Reasoning）」能力時表現可以大幅提升。然而，模型在實際推理時，容易想太多，例如驗算太多次，會消耗太多不必要的算力資源。</p>
+<p>直覺上，可能會覺得模型的推理越長，結果應該越好。然而，很多研究顯示，推理的程度與正確率其實為<strong>負相關</strong>。推理越長，正確率往往越低。其中一篇比較嚴謹的論文，結果依然證明，模型推理長度對於正確率真的沒有什麼幫助<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
 <p>那麼，要如何讓模型不要過度思考呢？以下是四種主要的方法，分別對應上一堂課中四種訓練模型Reasoning的方法。</p>
-<h3 id="方法一：改變CoT"><a href="#方法一：改變CoT" class="headerlink" title="方法一：改變CoT"></a>方法一：改變CoT</h3><p>傳統的方式會使用CoT讓模型一步步思考。而新的研究提出了CoD（chain of Draft）的概念，也就是改寫Cot的prompt，明確的要求模型在每個推理的部分都不要寫太長。實驗證明，這樣的CoD，有時候甚至能表現的比原本的CoT還要好[^2] 。</p>
-<h3 id="方法二：給模型推論的工作流程"><a href="#方法二：給模型推論的工作流程" class="headerlink" title="方法二：給模型推論的工作流程"></a>方法二：給模型推論的工作流程</h3><p>直接限制模型思考的長度。例如在樹狀搜尋中，強制限制結構的大小，避免模型無限發散。</p>
-<h3 id="方法三：隱藏CoT（Imitation-Learning）"><a href="#方法三：隱藏CoT（Imitation-Learning）" class="headerlink" title="方法三：隱藏CoT（Imitation Learning）"></a>方法三：隱藏CoT（Imitation Learning）</h3><p>讓「學生模型」學習「老師模型」的高效率推理過程。</p>
+<h3 id="方法一：改變CoT">方法一：改變CoT</h3>
+<p>傳統的方式會使用CoT讓模型一步步思考。而新的研究提出了CoD（chain of Draft）的概念，也就是改寫Cot的prompt，明確的要求模型在每個推理的部分都不要寫太長。實驗證明，這樣的CoD，有時候甚至能表現的比原本的CoT還要好<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> 。</p>
+<h3 id="方法二：給模型推論的工作流程">方法二：給模型推論的工作流程</h3>
+<p>直接限制模型思考的長度。例如在樹狀搜尋中，強制限制結構的大小，避免模型無限發散。</p>
+<h3 id="方法三：隱藏CoT（Imitation-Learning）">方法三：隱藏CoT（Imitation Learning）</h3>
+<p>讓「學生模型」學習「老師模型」的高效率推理過程。</p>
 <p>首先將同一個問題詢問老師多次，選擇一個最短的推理過程，讓學生模型學習這個最短推理過程作為訓練資料。</p>
-<p>接著在學生模型訓練的過程中，漸進式的刪除Reasoning內容的Token，每次減少一點點，最後，模型的能力仍然一樣，卻學會了不產生Reasoning的過程，就像是學會了心算[^3]。</p>
-<h3 id="方法四：動態懲罰（RL）"><a href="#方法四：動態懲罰（RL）" class="headerlink" title="方法四：動態懲罰（RL）"></a>方法四：動態懲罰（RL）</h3><p>DeepSeek R1在訓練過程中被發現，隨著RL的進行，它的推理內容變得超級長。原因很簡單：因為在訓練過程中，沒有人教AI在意思考過程的長度。</p>
+<p>接著在學生模型訓練的過程中，漸進式的刪除Reasoning內容的Token，每次減少一點點，最後，模型的能力仍然一樣，卻學會了不產生Reasoning的過程，就像是學會了心算<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</p>
+<h3 id="方法四：動態懲罰（RL）">方法四：動態懲罰（RL）</h3>
+<p>DeepSeek R1在訓練過程中被發現，隨著RL的進行，它的推理內容變得超級長。原因很簡單：因為在訓練過程中，沒有人教AI在意思考過程的長度。</p>
 <p>為了解決這個問題，必須將「長度」加入到RL的機制（Reward）中，但是每個問題的難度都不同，這個標準應該怎麼定義？</p>
 <ul>
-<li><p><strong>相對標準</strong>：<br>多數論文採用了這種方法。依照問題的難度決定標準，先讓模型多次對同一個問題進行推理。計算答對時，平均長度大約為何。在接下來的訓練中，除了答案正確，模型還必須讓答案的長度低於平均，才能得到正向獎勵[^4] [^5] [^6]。</p>
+<li>
+<p><strong>相對標準</strong>：<br>
+多數論文採用了這種方法。依照問題的難度決定標準，先讓模型多次對同一個問題進行推理。計算答對時，平均長度大約為何。在接下來的訓練中，除了答案正確，模型還必須讓答案的長度低於平均，才能得到正向獎勵<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。</p>
 </li>
-<li><p><strong>指定推理的長度</strong>：<br>另一種方法是直接在問題後面加上限制。直接要求「推理長度必須設定為n」。這時模型表現的評分定義為「正確率-目標和實際推理長度的差異」[^7]。</p>
+<li>
+<p><strong>指定推理的長度</strong>：<br>
+另一種方法是直接在問題後面加上限制。直接要求「推理長度必須設定為n」。這時模型表現的評分定義為「正確率-目標和實際推理長度的差異」<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>。</p>
 </li>
 </ul>
 <hr>
-<h3 id="個人結論："><a href="#個人結論：" class="headerlink" title="個人結論："></a>個人結論：</h3><p>透過上述策略，控制大型語言模型的推理長度，可以節省算力，同時不影響模型的推論能力</p>
+<h3 id="個人結論：">個人結論：</h3>
+<p>透過上述策略，控制大型語言模型的推理長度，可以節省算力，同時不影響模型的推論能力</p>
 <p>這次所討論的內容非常現實。在AI商業化的現代，如何在節省算力的同時，維持優秀的模型能力，絕對是對各大AI公司來說非常緊急且重要的研究方向。</p>
-<p>[^1]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.11215">arXiv 2501.11215</a><br>[^2]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2502.18600">arXiv 2502.18600</a><br>[^3]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2405.14838">arXiv 2405.14838</a><br>[^4]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.12570">arXiv 2501.12570</a><br>[^5]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.12599">arXiv 2501.12599</a><br>[^6]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2502.04463">arXiv 2502.04463</a><br>[^7]:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.05294">arXiv 2503.04687</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.11215">arXiv 2501.11215</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2502.18600">arXiv 2502.18600</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2405.14838">arXiv 2405.14838</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.12570">arXiv 2501.12570</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.12599">arXiv 2501.12599</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2502.04463">arXiv 2502.04463</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2605.05294">arXiv 2503.04687</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
         
       </div>
