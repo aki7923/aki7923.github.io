@@ -14,22 +14,26 @@
   
 
   
-  <title>【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025) | Crystal&#39;s Blog</title>
+  <title>【學習筆記】大型語言模型能力評量：生成式 AI 時代下的機器學習 (李宏毅老師 2025) | Crystal&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。） 在現代的AI中，通常不會直接使用剛完成的大模型。 一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Foundation model（基礎模型&#x2F;base model），接著透過Post-training&#x2F;Continual le">
+  <meta name="description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第九講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） 模型的評分系統 隨著各個大型語言模型推陳出新，要如何客觀的判斷模型能力？ 傳統的測試方法 目前主流的方法，是直接執行數學或程式問題等難題測試進行評估。這種方式簡單粗暴並直觀。然而，這些高分的背後，有可能模型作弊「記憶」出來的。 對常用的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
-<meta property="og:url" content="http://example.com/2026/03/15/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E5%BE%8C%E8%A8%93%E7%B7%B4(Post-Training)%E8%88%87%E9%81%BA%E5%BF%98%E5%95%8F%E9%A1%8C%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/index.html">
+<meta property="og:title" content="【學習筆記】大型語言模型能力評量：生成式 AI 時代下的機器學習 (李宏毅老師 2025)">
+<meta property="og:url" content="http://example.com/2026/03/23/llm-9-2025/index.html">
 <meta property="og:site_name" content="Crystal&#39;s Blog">
-<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。） 在現代的AI中，通常不會直接使用剛完成的大模型。 一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Foundation model（基礎模型&#x2F;base model），接著透過Post-training&#x2F;Continual le">
+<meta property="og:description" content="課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第九講 （註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。） 模型的評分系統 隨著各個大型語言模型推陳出新，要如何客觀的判斷模型能力？ 傳統的測試方法 目前主流的方法，是直接執行數學或程式問題等難題測試進行評估。這種方式簡單粗暴並直觀。然而，這些高分的背後，有可能模型作弊「記憶」出來的。 對常用的">
 <meta property="og:locale" content="zn_CH">
-<meta property="article:published_time" content="2026-03-15T09:17:40.000Z">
-<meta property="article:modified_time" content="2026-05-11T02:06:24.301Z">
+<meta property="og:image" content="http://example.com/2026/03/23/llm-9-2025/9001.png">
+<meta property="og:image" content="http://example.com/2026/03/23/llm-9-2025/9002.png">
+<meta property="og:image" content="http://example.com/2026/03/23/llm-9-2025/9003.png">
+<meta property="article:published_time" content="2026-03-23T09:10:12.000Z">
+<meta property="article:modified_time" content="2026-05-11T14:37:11.456Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2026/03/23/llm-9-2025/9001.png">
   
     <link rel="alternate" href="/atom.xml" title="Crystal's Blog" type="application/atom+xml">
   
@@ -159,7 +163,7 @@
        
 
 
-<article id="post-【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-llm-9-2025" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -172,7 +176,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        【學習筆記】後訓練(Post-Training)與遺忘問題：生成式 AI 時代下的機器學習 (李宏毅老師 2025)
+        【學習筆記】大型語言模型能力評量：生成式 AI 時代下的機器學習 (李宏毅老師 2025)
       </h1>
     
   
@@ -180,7 +184,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2026-03-15T09:17:40.000Z" itemprop="datePublished">2026-03-15</time>
+  <time class="dt-published" datetime="2026-03-23T09:10:12.000Z" itemprop="datePublished">2026-03-23</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -191,98 +195,58 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.1k words 
+            1.1k words 
           </div>
         </div>
         
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第六講</p>
-<p><code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於 YouTube之公開課程影片與簡報。）</code></p>
-<p>在現代的AI中，通常不會直接使用剛完成的大模型。</p>
-<p>一個語言模型的成長路徑是：先透過資料訓練出擁有基本能力的Foundation model（基礎模型/base model），接著透過Post-training/Continual learning將其微調成Fine-tuned Model(例如Chat/Instruct Model).</p>
-<h3 id="如何進行Post-train">如何進行Post-train</h3>
-<p>Post-training的訓練風格包含以下這三種：</p>
-<ul>
-<li>Pre-train style：繼續讓模型看資料，練習文字接龍</li>
-<li>SFT (Supervised Fine-Tuning) style：給模型人類的標準回答示範</li>
-<li>RL (Reinforcement Learning) style：透過獎勵機制訓練模型</li>
-</ul>
-<p>透過以上三種方式，可以讓模型快速的掌握在某一領域的特定知識，卻也會帶來嚴重的影響：遺忘</p>
-<h3 id="Post-train的副作用：">Post-train的副作用：</h3>
-<p>研究發現，當模型被訓練掌握特定任務時，模型會忘記原本已經學會的基本能力。這個現象叫做<strong>災難性遺忘（Catastrophic Forgetting）</strong>。</p>
-<p>雖然有人可能會覺得這個問題沒關係，讓模型專精一個領域即可，但是事實上，模型容易連「用什麼語言講話」或「安全性防線」都遺忘，所以還是非常需要盡可能避免遺忘發生。</p>
+          <p>課程來源：李宏毅老師【生成式AI時代下的機器學習(2025)】第九講<br>
+<code>（註：本篇筆記之知識內容及輔助圖片皆整理自李宏毅老師於YouTube之公開課程影片與簡報。）</code></p>
+<h3 id="模型的評分系統">模型的評分系統</h3>
+<p>隨著各個大型語言模型推陳出新，要如何客觀的判斷模型能力？</p>
+<h3 id="傳統的測試方法">傳統的測試方法</h3>
+<p>目前主流的方法，是直接執行數學或程式問題等難題測試進行評估。這種方式簡單粗暴並直觀。然而，這些高分的背後，有可能模型作弊「記憶」出來的。</p>
+<p>對常用的數學測試題目GSM8K進行實驗，在不影響題目難度的前提下，微調題目中的數字或符號。結果大多數的模型正確率明顯的下降，可證明大多數的模型都有稍微記憶到題目<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<p>在無法確定模型是否曾經在訓練時看過解答的情況下，這些測試的準確率不一定可靠。</p>
+<h3 id="其他測試方法">其他測試方法</h3>
 <ul>
 <li>
-<h4 id="Safety-Alignment最容易受到影響"><strong>Safety Alignment最容易受到影響</strong>:</h4>
+<h4 id="ARC-AGI">ARC-AGI</h4>
 </li>
 </ul>
-<p>原本經過訓練和對齊，不會生成危險內容的模型，經過Post-traning後，其安全性容易受到破壞<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
-<p>以Llama2為例，其Pre-train主要使用的英文，這時透過Pre-train style訓練模型使用中文回答。結果是，模型雖學會使用中文回答，卻忘記了的安全限制。被誘導說出不該講的話的機率從原版的0.22%升高為5~7％<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</p>
-<p>即使是進行簡單SFT style的微調，就算不刻意叫模型做壞事（例如：幫模型改名、給予正常資料）Post-train結束後，模型的安全性依然會也會突然下降。</p>
+<p><strong>ARC-AGI</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>是一種不直觀的圖形邏輯推理測試。<br>
+過去五年內，許多測試很快就被模型過度擬合，但ARC-AGI因為其複雜的題目保持有用。</p>
+<p>在OpenAI的o3釋出時，也有特別宣傳其在ARC-AGI中的能力。能力甚至超過了一般人類（雖然每次進行這種生度運算需要消耗約1000美元）。</p>
+<p>即是是這麼困難的題目，只要有固定的出題機制，以及開發者放出的例題，就能利用已釋出的範例製造出更多的模擬題，給模型刷題練習。因此，還是不能確保模型在測試時，是運用自身的能力還是刷題經驗作答。</p>
 <ul>
 <li>
-<h4 id="跨模態學習的遺忘">跨模態學習的遺忘</h4>
+<h4 id="Chatbot-Arena：">Chatbot Arena：</h4>
 </li>
 </ul>
-<p>實際案例：研究人員將語音透過Speech Encoder變為向量，並利用Adapter讓文字模型學習解讀聲音。要求模型回答「這份音訊中是什麼情緒？用json格式回答」</p>
-<p>第一次訓練後，模型會回答錯誤的情緒，卻可以正確使用json(模型本來的能力)。訓練到第三次後，模型終於學會正確回答情緒，卻徹底忘記如何使用json格式了。</p>
-<ul>
-<li>
-<h4 id="模型大小的影響">模型大小的影響</h4>
-</li>
-</ul>
-<p>一般來說，可能會認為模型的大小與遺忘的問題有關。然而，實驗顯示，在1~7B參數大小的範圍內，比較大的模型在遺忘的狀況並沒有比較輕微。症狀嚴重程度反而跟「在目標任務上做的有多好」的程度有關係，也就是說模型越特化，它遺忘的情形就越嚴重<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>。</p>
-<p>那麼，能不能一次教語言模型一個任務，慢慢累積它的能力直到變成全能？結果是不行，實作下，教越多東西 finetune後的結果越差。</p>
-<ul>
-<li>
-<h4 id="妥協策略：">妥協策略：</h4>
-</li>
-</ul>
-<p>有些模型會利用「Learn less, forgets less」的概念，使用Lora、Attention Dropout或Weight Decay等技術限制模型學習的內容，由此減少對原本記憶的破壞。</p>
-<h3 id="如何克服遺忘：">如何克服遺忘：</h3>
-<ol>
-<li>
-<h4 id="Experience-replay">Experience replay:</h4>
-</li>
-</ol>
-<p>過去的實驗發現，在訓練新任務的能力時，同時加入一點點（大約5％）過去訓練時使用的資料，能有效保留模型的記憶<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。</p>
-<p>然而，現代模型（尤其是大公司所開發的）經常無法取得過去的訓練資料。因此問題又變成了「如何產生自己的訓練資料？」</p>
-<p>這個問題的解法就是誘導模型自己吐出資料：</p>
-<ul>
-<li>Magpie技術：直接給模型代表User的Token，但不實際詢問問題，模型就會進行自問自答，而生成出擬真的「舊訓練資料」。</li>
-</ul>
-<ol start="2">
-<li>
-<h4 id="Peraphrase">Peraphrase:</h4>
-</li>
-</ol>
-<p>訓練模型時，不使用人類寫出的答案，而是使用Founation Model將標準答案「換句話說」，將這個被換過的答案當成正確答案給模型訓練。這樣對於模型來說，與以前的語氣比較接近，就可以有效減少遺忘。</p>
-<ol start="3">
-<li>
-<h4 id="Self-output">Self-output:</h4>
-</li>
-</ol>
-<p>在上述Peraphrase的概念中，進一步，直接讓模型使用Foundation Model生成的答案當作練習目標（類似RL），甚至可以將過程中的Foundation Model換成其他的比較強的LLM（用語言模型教語言模型），也同樣能減少遺忘。</p>
+<p>既然基本的考卷會被破解，那麼讓人類擔任面試官就不能刷題了吧？<strong>Chatbot Arena</strong>的機制就是讓使用者（人類）提出問題，給予兩種模型同時提供回覆，由人類選出比較佳的模型。</p>
+<p>看似非常公平，但人類其實在選擇回答上也有傾向（例如喜歡較多粗體字、表情符號等）。也就是說，模型內容差異不多的情況下，人類可能會因為「輸出風格」的不同來給分。</p>
+<p><strong>解決方式</strong>：Elo Score<br>
+為了解決這個問題，引入競技遊戲中常用的Elo Score系統。<br>
+根據下圖，假設有k個模型Ｍ，每個模型的戰力是β：</p>
+<p><img src="9001.png" alt="9001.png"></p>
+<p>在兩模型評比時，透過以下的公式計算出彼此的勝率E：</p>
+<p><img src="9002.png" alt="9002.png"></p>
+<p>注意的是，特別在公式中加入β0，代表設定一個數值包含實力以外的所有因素。透過這個值可消去其他因素的影響。</p>
+<p>取得勝率Ｅ後，即可反推出每個模型的戰力。</p>
+<p>下圖為實驗結果，可證明，有沒有考慮風格帶來的影響，結果差異會非常大。例如Claude不太會講好聽話，所以原本排名比較低，去掉這些因素後，能力明顯上升。</p>
+<p><img src="9003.png" alt="9003.png"></p>
 <hr>
-<h3 id="個人總結：">個人總結：</h3>
-<p>Post-training可以讓模型輕易在目標任務上提升能力。但有機率忘記原本的基本技能。必須使用上述的各種方式，避免遺忘的發生。</p>
-<p>這堂課程中也可以發現到，比起「如何訓練模型」，「如何取得訓練模型使用的資料」似乎更加的困難與複雜。在大公司獨佔許多資料的現代，各種研究人員如何發揮創意，利用各種方式克服困難，也讓我看到了AI工程中非常有趣的一面。</p>
+<h3 id="個人結論：">個人結論：</h3>
+<p>以上評分系統的發展歷程，很好的表現了著名的定律<strong>Goodhart’s Law</strong>：「當一項指標被當成追求的目標時，它就不再是一個好指標」。</p>
+<p>我的想法跟老師在課堂中說的一樣，這麼在意評分系統做什麼呢？它只會把模型的努力異化掉的。</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2412.19512">arXiv 2412.19512</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2410.05229">arXiv 2410.05229</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2310.04799">arXiv 2310.04799</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.03129">arXiv 2401.03129</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2401.05605">arXiv 2401.05605</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.13669">arXiv 2402.13669</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.03329">arXiv 1909.03329</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1911.01547">arXiv 1911.01547</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -298,27 +262,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2026/03/18/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91LLM%E7%9A%84%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83(reasoning)%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/"
-      title="【學習筆記】LLM的深度思考(reasoning)：生成式 AI 時代下的機器學習 (李宏毅老師 2025)"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        【學習筆記】LLM的深度思考(reasoning)：生成式 AI 時代下的機器學習 (李宏毅老師 2025)
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2026/03/12/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E9%A0%90%E8%A8%93%E7%B7%B4%E2%80%93%E5%B0%8D%E9%BD%8A(Pretrain-Alignment)%20%E7%9A%84%E5%BC%B7%E5%A4%A7%E8%88%87%E6%A5%B5%E9%99%90%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/"
-      title="【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)"
+      href="/2026/03/20/%E3%80%90%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%E3%80%91%E5%88%A5%E8%AE%93%E3%80%8C%E6%8E%A8%E7%90%86%E3%80%8D%E5%A4%A7%E5%9E%8B%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%83%B3%E5%A4%AA%E5%A4%9A%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E6%99%82%E4%BB%A3%E4%B8%8B%E7%9A%84%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20(%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%80%81%E5%B8%AB%202025)/"
+      title="【學習筆記】別讓「推理」大型語言模型想太多：生成式 AI 時代下的機器學習 (李宏毅老師 2025)"
      >
 
     <p class="title-text">
       
-        【學習筆記】預訓練–對齊(Pretrain-Alignment) 的強大與極限：生成式 AI 時代下的機器學習 (李宏毅老師 2025)
+        【學習筆記】別讓「推理」大型語言模型想太多：生成式 AI 時代下的機器學習 (李宏毅老師 2025)
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
